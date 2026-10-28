@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP | THE ESSENCE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/mini-logo.png">
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:black;
+            color:white;
+            font-family:'Oswald', sans-serif;
+            overflow-x:hidden;
+        }
+        /* BACK BUTTON */
+
+        .back-button{
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            width: 55px;
+            height: 55px;
+            border: 1px solid #222;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            z-index: 9999;
+            font-size: 18px;
+        }
+
+        .back-button:hover{
+            border-color: red;
+            color: red;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255,0,0,0.4);
+        }
+        /* PAGE */
+
+        .help-page{
+            width:100%;
+            min-height:100vh;
+            padding:140px 40px 100px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .help-page::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:
+            linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.94)),
+            url("assets/images/The-essence-banner.png");
+            background-size:cover;
+            background-position:center;
+            filter:grayscale(100%);
+            z-index:0;
+        }
+
+        .help-container{
+            position:relative;
+            z-index:2;
+            width:100%;
+            max-width:900px;
+            background:rgba(8,8,8,0.85);
+            border:1px solid #161616;
+            padding:70px;
+            backdrop-filter:blur(12px);
+        }
+
+        .mini-title{
+            color:red;
+            letter-spacing:6px;
+            font-size:13px;
+            margin-bottom:20px;
+        }
+
+        .help-container h1{
+            font-size:5rem;
+            margin-bottom:20px;
+            letter-spacing:6px;
+            line-height:1;
+        }
+
+        .intro{
+            color:#888;
+            font-size:18px;
+            line-height:1.8;
+            margin-bottom:50px;
+        }
+
+        .help-block{
+            margin-bottom:45px;
+            border-left:1px solid red;
+            padding-left:25px;
+        }
+
+        .help-block h2{
+            font-size:2rem;
+            margin-bottom:15px;
+            letter-spacing:2px;
+        }
+
+        .help-block p{
+            color:#999;
+            line-height:1.9;
+            font-size:17px;
+        }
+
+        .support-email{
+            color:red;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .support-email:hover{
+            opacity:0.7;
+        }
+
+        @media(max-width:900px){
+            .help-container{
+                padding:40px 30px;
+            }
+
+            .help-container h1{
+                font-size:3rem;
+            }
+
+            .help-block h2{
+                font-size:1.5rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i></a>
+    <main class="help-page">
+        <section class="help-container">
+            <p class="mini-title">THE ESSENCE • SUPPORT CENTER</p>
+            <h1>HELP CENTER</h1>
+            <p class="intro">Welcome to the official support section of THE ESSENCE. Here you can find information related to events, purchases, contact methods and general platform assistance.</p>
+
+            <div class="help-block">
+                <h2>EVENTS & ACCESS</h2>
+                <p>Information about upcoming live experiences, promotions and future releases will be published through the official platform.</p>
+            </div>
+
+            <div class="help-block">
+                <h2>CONTACT SUPPORT</h2>
+                <p>For technical issues, collaborations or general assistance, contact the official support channel:<br><br><a href="mailto:support@theessence.com" class="support-email">support@theessence.com</a></p>
+            </div>
+
+            <div class="help-block">
+                <h2>PURCHASES & REFUNDS</h2>
+                <p>Refund requests and purchase support may be available depending on the product, event or release conditions.</p>
+            </div>
+
+            <div class="help-block">
+                <h2>COMMUNITY</h2>
+                <p>THE ESSENCE encourages respectful interaction across all affiliated platforms, social media and future live experiences.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROYECTOS | THE ESSENCE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/mini-logo.png">
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:black;
+      color:white;
+      font-family:'Oswald', sans-serif;
+      overflow-x: hidden;
+      user-select: none;
+    }
+    /* HEADER */
+
+    header{
+      width:100%;
+      height: 70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 40px;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      border-bottom:1px solid #222;
+    }
+
+    .logo a{
+      font-size:2.2rem;
+      font-weight:800;
+      letter-spacing:2px;
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .logo a:hover{
+      color:red;
+    }
+
+    nav{
+      display:flex;
+      gap:30px;
+      flex-wrap: wrap;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:red;
+    }
+
+    .user-actions{
+      display:flex;
+      gap:15px;
+      align-items:center;
+    }
+
+    .user-actions a{
+      color:white;
+      text-decoration:none;
+    }
+
+    .user-actions button{
+      padding:12px 28px;
+      background:red;
+      border:none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color:white;
+      cursor:pointer;
+    }
+
+    .user-actions button:hover{
+      background:#b30000;
+    }
+    /* MAIN */
+
+    main{
+      width:100%;
+      min-height:100vh;
+    }
+    /* LANGUAGE SWITCH */
+
+    .language-switch{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .language-switch a{
+      color:white;
+      text-decoration:none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition:0.3s;
+    }
+
+    .language-switch a:hover{
+      color:red;
+    }
+
+    .language-switch span{
+      color:#555;
+    }
+
+    .flag-icon{
+      width:38px;
+      height:38px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid #333;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .flag-icon:hover{
+      transform:scale(1.1);
+      border-color:red;
+      box-shadow:0 0 15px rgba(255,0,0,0.4);
+    }
+    /* TEXT BAND */
+
+    .scroll-text{
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid #400;
+      border-bottom: 1px solid #400;
+      background: linear-gradient(to right, #000, #111, #000);
+      padding: 20px 0;
+    }
+
+    .track{
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      display: flex;
+      width: max-content;
+      animation: scroll 40s linear infinite;
+    }
+
+    .group{
+      display: flex;
+    }
+
+    .track span{
+      white-space: nowrap;
+      padding-right: 120px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+    }
+
+    @keyframes scroll{
+      from{
+        transform: translateX(0);
+      }
+
+      to{
+        transform: translateX(-50%);
+      }
+    }
+    /* FOOTER */
+
+    footer{
+      width:100%;
+      background:linear-gradient(to top, #050505, #000);
+      padding:100px 40px;
+      border-top:1px solid #222;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+      text-align: center;
+    }
+
+    .footer-links, .social-icons{
+      display:flex;
+      gap:20px;
+    }
+
+    footer a{
+      color:#999;
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      color:red;
+    }
+
+    @media (max-width: 1100px) {
+      header {
+        padding: 20px;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .user-actions {
+        margin-bottom: 10px;
+      }
+
+      .logo h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+    /* WHATSAPP FLOAT BUTTON */
+
+    .whatsapp-float{
+      position:fixed;
+      width:65px;
+      height:65px;
+      top: 50%;
+      right:30px;
+      transform: translateY(-50%);
+      background: black;
+      border-radius:50%;
+      border: 1px solid #25D366;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color: #25D366;
+      font-size:34px;
+      text-decoration:none;
+      box-shadow:0 0 20px rgba(0,0,0,0.45);
+      z-index:9999;
+      transition:0.3s;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-50%) scale(1.1);
+      background:#25D366;
+      color: white;
+    }
+    /* PROJECTS HERO */
+
+    .projects-hero{
+      position:relative;
+      width:100%;
+      min-height:70vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background-image:url("assets/images/The-essence-banner.png");
+      background-size:1200px;
+      background-repeat:no-repeat;
+      background-position:center top;
+      overflow:hidden;
+    }
+
+    .projects-overlay{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
+    }
+
+    .projects-content{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      max-width:900px;
+      padding:40px;
+    }
+
+    .projects-subtitle{
+      color:red;
+      letter-spacing:5px;
+      margin-bottom:20px;
+      font-size:14px;
+    }
+
+    .projects-content h1{
+      font-size:5rem;
+      letter-spacing:4px;
+      margin-bottom:25px;
+    }
+
+    .projects-description{
+      color:#aaa;
+      font-size:18px;
+      line-height:1.8;
+    }
+    /* PROJECTS GRID */
+
+    .projects-grid{
+      width:100%;
+      max-width:1600px;
+      margin:auto;
+      padding:120px 60px 80px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+
+    .project-card{
+      background:#0d0d0d;
+      border:1px solid #1f1f1f;
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-6px) scale(1.01);
+      border-color:red;
+      box-shadow:0 0 25px rgba(255,0,0,0.15);
+    }
+
+    .project-card img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      filter:grayscale(100%);
+      transition:0.4s;
+    }
+
+    .project-card:hover img{
+      filter:grayscale(0%);
+      transform:scale(1.03);
+    }
+
+    .project-info{
+      padding:30px;
+    }
+
+    .project-type{
+      color:red;
+      letter-spacing:3px;
+      font-size:13px;
+      margin-bottom:15px;
+    }
+
+    .project-info h2{
+      font-size:2rem;
+      margin-bottom:20px;
+    }
+
+    .project-info p{
+      color:#b5b5b5;
+      line-height:1.7;
+    }
+    /* RESPONSIVE */
+
+    @media (max-width: 900px){
+      .projects-grid{
+        grid-template-columns:1fr;
+      }
+
+      .projects-content h1{
+        font-size:4rem;
+      }
+    }
+    /* SOCIAL ICONS */
+    
+    .social-icons a{
+      color:white;
+      font-size:22px;
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+      color:red;
+      transform:scale(1.2);
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <a href="https://www.whatsapp.com" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <!-- HEADER -->
+
+  <header>
+    <div class="logo">
+      <a href="index-es.html">THE ESSENCE</a>
+    </div>
+
+    <div class="language-switch">
+      <a href="projects.html">
+        <img src="assets/images/uk-reino-unido.png" alt="English Version" class="flag-icon">
+      </a>
+    </div>
+
+    <nav>
+      <a href="about-es.html">Sobre Nosotros</a>
+      <a href="projects-es.html">Proyectos</a>
+      <a href="merch-es.html">Merch</a>
+      <a href="video-es.html">Vídeo</a>
+      <a href="gallery-es.html">Fotografías</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO PROJECTS -->
+
+    <section class="projects-hero">
+      <div class="projects-overlay"></div>
+      <div class="projects-content">
+        <p class="projects-subtitle">SONIDO • VISUALES • ATMOSFERA</p>
+        <h1>PROYECTOS</h1>
+        <p class="projects-description">Cada lanzamiento es parte de un universo artístico más amplio, moldeado por la emoción, el caos, la energía cinematográfica y las experiencias en vivo inmersivas.</p>
+      </div>
+    </section>
+    <!-- PROJECTS GRID -->
+
+    <section class="projects-grid">
+      <div class="project-card">
+        <img src="assets/images/ensayo.jpeg">
+        <div class="project-info">
+          <p class="project-type">NUEVO SINGLE</p>
+          <h2>PRÓXIMAMENTE</h2>
+          <p>Una composición oscura y emocional que explora la identidad, la tensión y las atmósferas distorsionadas.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/images/en-vivo.jpeg">
+        <div class="project-info">
+          <p class="project-type">SESIÓN EN VIVO</p>
+          <h2>EXPERIENCIA EN VIVO</h2>
+          <p> Energía en vivo cruda capturada a través de visuales cinematográficos, presentaciones agresivas y sonido inmersivo.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/images/the-essence-logo.jpeg">
+        <div class="project-info">
+          <p class="project-type">CONCEPTO VISUAL</p>
+          <h2>EL UNIVERSO DE THE ESSENCE</h2>
+          <p>Estética experimental que combina oscuridad, simbolismo y narrativa emocional.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- BANDA DE TEXTO -->
+
+  <div class="track">
+    <div class="group">
+      <span>THE ESSENCE • MÚSICA • MERCH • EXPERIENCIA EN VIVO • COMUNIDAD •</span>
+      <span>THE ESSENCE • MÚSICA • MERCH • EXPERIENCIA EN VIVO • COMUNIDAD •</span>
+      <span>THE ESSENCE • MÚSICA • MERCH • EXPERIENCIA EN VIVO • COMUNIDAD •</span>
+    </div>
+
+    <div class="group">
+      <span>THE ESSENCE • MÚSICA • MERCH • EXPERIENCIA EN VIVO • COMUNIDAD •</span>
+      <span>THE ESSENCE • MÚSICA • MERCH • EXPERIENCIA EN VIVO • COMUNIDAD •</span>
+      <span>THE ESSENCE • MÚSICA • MERCH • EXPERIENCIA EN VIVO • COMUNIDAD •</span>
+    </div>
+  </div>
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="copyright">
+      <p>© 2026 THE ESSENCE</p>
+    </div>
+
+    <h2>THE ESSENCE</h2>
+    <p>Música inmersiva impulsada por el caos, la emoción y la identidad.</p>
+
+    <div class="footer-links">
+      <a href="help-es.html">Ayuda</a>
+      <a href="terms-es.html">Términos</a>
+      <a href="privacy-es.html">Privacidad</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/theessence__of/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCjjIb5W5-OcR4VmXhDeepxA" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61589623434500" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@the_essence_of" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://music.apple.com" target="_blank"><i class="fab fa-apple"></i></a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GALLERY | THE ESSENCE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/images/mini-logo.png">
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:black;
+      color:white;
+      font-family:'Oswald', sans-serif;
+      overflow-x: hidden;
+      user-select: none;
+    }
+    /* HEADER */
+
+    header{
+      width:100%;
+      height: 70px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 40px;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      border-bottom:1px solid #222;
+    }
+
+    .logo a{
+      font-size:2.2rem;
+      font-weight:800;
+      letter-spacing:2px;
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      display:inline-block;
+    }
+
+    .logo a:hover{
+      color:red;
+    }
+
+    nav{
+      display:flex;
+      gap:30px;
+      flex-wrap: wrap;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:red;
+    }
+
+    .user-actions{
+      display:flex;
+      gap:15px;
+      align-items:center;
+    }
+
+    .user-actions a{
+      color:white;
+      text-decoration:none;
+    }
+
+    .user-actions button{
+      padding:12px 28px;
+      background:red;
+      border:none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color:white;
+      cursor:pointer;
+    }
+
+    .user-actions button:hover{
+      background:#b30000;
+    }
+    /* MAIN */
+
+    main{
+      width:100%;
+      min-height:100vh;
+    }
+    /* LANGUAGE SWITCH */
+
+    .language-switch{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .language-switch a{
+      color:white;
+      text-decoration:none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition:0.3s;
+    }
+
+    .language-switch a:hover{
+      color:red;
+    }
+
+    .language-switch span{
+      color:#555;
+    }
+
+    .flag-icon{
+      width:38px;
+      height:38px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid #333;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .flag-icon:hover{
+      transform:scale(1.1);
+      border-color:red;
+      box-shadow:0 0 15px rgba(255,0,0,0.4);
+    }
+    /* TEXT BAND */
+
+    .scroll-text{
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid #400;
+      border-bottom: 1px solid #400;
+      background: linear-gradient(to right, #000, #111, #000);
+      padding: 20px 0;
+    }
+
+    .track{
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      display: flex;
+      width: max-content;
+      animation: scroll 40s linear infinite;
+    }
+
+    .group{
+      display: flex;
+    }
+
+    .track span{
+      white-space: nowrap;
+      padding-right: 120px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+    }
+
+    @keyframes scroll{
+      from{
+        transform: translateX(0);
+      }
+
+      to{
+        transform: translateX(-50%);
+      }
+    }
+    /* FOOTER */
+
+    footer{
+      width:100%;
+      background:linear-gradient(to top, #050505, #000);
+      padding:100px 40px;
+      border-top:1px solid #222;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+      text-align: center;
+    }
+
+    .footer-links, .social-icons{
+      display:flex;
+      gap:20px;
+    }
+
+    footer a{
+      color:#999;
+      text-decoration:none;
+    }
+
+    footer a:hover{
+      color:red;
+    }
+
+    @media (max-width: 1100px) {
+      header {
+        padding: 20px;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .user-actions {
+        margin-bottom: 10px;
+      }
+
+      .logo h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+    /* WHATSAPP FLOAT BUTTON */
+
+    .whatsapp-float{
+      position:fixed;
+      width:65px;
+      height:65px;
+      top: 50%;
+      right:30px;
+      transform: translateY(-50%);
+      background: black;
+      border-radius:50%;
+      border: 1px solid #25D366;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color: #25D366;
+      font-size:34px;
+      text-decoration:none;
+      box-shadow:0 0 20px rgba(0,0,0,0.45);
+      z-index:9999;
+      transition:0.3s;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-50%) scale(1.1);
+      background:#25D366;
+      color: white;
+    }
+    /* VIDEO */
+
+    .video-promo{
+      position:relative;
+      width:100%;
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .promo-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .video-overlay{
+      position:absolute;
+      pointer-events: none;
+      inset:0;
+      background:rgba(0,0,0,0.65);
+      backdrop-filter:blur(2px);
+    }
+
+    .video-content{
+      position:relative;
+      z-index:5;
+      text-align:center;
+      max-width:900px;
+      padding:40px;
+    }
+
+    .video-content h1{
+      font-size: 6rem;
+      font-weight: 900;
+      letter-spacing: 8px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .video-subtitle{
+      color:red;
+      letter-spacing:6px;
+      font-size:14px;
+      margin-bottom:20px;
+    }
+
+    .video-content h2{
+      font-size:6rem;
+      font-weight:900;
+      letter-spacing:8px;
+      margin-bottom:30px;
+      text-transform:uppercase;
+    }
+
+    .video-text{
+      color:#aaa;
+      font-size:18px;
+      line-height:1.8;
+      max-width:700px;
+      margin:auto;
+    }
+
+    @media(max-width:900px){
+      .video-content h1{
+        font-size: 3rem;
+        letter-spacing: 4px;
+      }
+
+      .video-content h2{
+        font-size:3rem;
+        letter-spacing:4px;
+      }
+    }
+    /* RESPONSIVE */
+
+    @media (max-width: 900px){
+      .projects-grid{
+        grid-template-columns:1fr;
+      }
+
+      .projects-content h1{
+        font-size:4rem;
+      }
+    }
+    /* SOCIAL ICONS */
+        
+    .social-icons a{
+      color:white;
+      font-size:22px;
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+      color:red;
+      transform:scale(1.2);
+    }
+    /* GALLERY HERO */
+
+    .gallery-hero{
+      position:relative;
+      width:100%;
+      height:70vh;
+      background:url("assets/images/The-essence-banner.png");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.75);
+    }
+
+    .gallery-content{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      max-width:900px;
+      padding:40px;
+    }
+
+    .gallery-subtitle{
+      color:red;
+      letter-spacing:6px;
+      font-size:14px;
+      margin-bottom:20px;
+    }
+
+    .gallery-content h1{
+      font-size:6rem;
+      letter-spacing:8px;
+      margin-bottom:25px;
+    }
+
+    .gallery-text{
+      color:#999;
+      font-size:18px;
+      line-height:1.8;
+    }
+    /* CARRUSEL */
+
+    .gallery-carousel{
+      width:100%;
+      overflow:hidden;
+      padding:80px 0;
+      border-top:1px solid #111;
+      border-bottom:1px solid #111;
+      background:#050505;
+    }
+
+    .carousel-track{
+      display:flex;
+      width:max-content;
+      animation:scrollGallery 35s linear infinite;
+    }
+
+    .carousel-track img{
+      width:500px;
+      height:320px;
+      object-fit:cover;
+      margin-right:25px;
+      filter:grayscale(100%);
+      transition:0.4s;
+      border:1px solid #111;
+    }
+
+    .carousel-track img:hover{
+      filter:grayscale(0%);
+      transform:scale(1.03);
+      border-color:red;
+    }
+
+    @keyframes scrollGallery{
+      from{
+        transform:translateX(0);
+      }
+
+      to{
+        transform:translateX(-50%);
+      }
+    }
+    /* PHOTO GRID */
+
+    .photo-grid{
+      width:100%;
+      max-width:1500px;
+      margin:auto;
+      padding:100px 60px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+    }
+
+    .photo-card{
+      overflow:hidden;
+      border:1px solid #111;
+      background:#050505;
+    }
+
+    .photo-card img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      filter:grayscale(100%);
+      transition:0.5s;
+    }
+
+    .photo-card:hover img{
+      filter:grayscale(0%);
+      transform:scale(1.05);
+    }
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+      .gallery-content h1{
+        font-size:3.5rem;
+      }
+
+      .photo-grid{
+        grid-template-columns:1fr;
+        padding:60px 20px;
+      }
+
+      .carousel-track img{
+        width:320px;
+        height:220px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- WHATSAPP FLOAT BUTTON -->
+  <a href="https://www.whatsapp.com" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <!-- HEADER -->
+
+  <header>
+    <div class="logo">
+      <a href="index.html">THE ESSENCE</a>
+    </div>
+
+    <div class="language-switch">
+      <a href="gallery-es.html">
+        <img src="assets/images/spain-españa.png" alt="Spanish Version" class="flag-icon">
+      </a>
+    </div>
+
+    <nav>
+      <a href="about.html">About Us</a>
+      <a href="projects.html">Projects</a>
+      <a href="merch.html">Merch</a>
+      <a href="video.html">Video</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+
+    <section class="gallery-hero">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-content">
+        <p class="gallery-subtitle">MOMENTS • CHAOS • IDENTITY</p>
+        <h1>GALLERY</h1>
+        <p class="gallery-text">Fragments captured through rehearsals, live sessions, distortion and atmosphere.</p>
+      </div>
+    </section>
+    <!-- CARRUSEL -->
+
+    <section class="gallery-carousel">
+      <div class="carousel-track">
+        <img src="assets/images/gallery1.jpeg">
+        <img src="assets/images/gallery2.jpeg">
+        <img src="assets/images/gallery3.jpeg">
+        <img src="assets/images/gallery4.jpeg">
+        <img src="assets/images/gallery5.jpeg">
+        <!-- DUPLICADAS PARA LOOP -->
+
+        <img src="assets/images/gallery1.jpeg">
+        <img src="assets/images/gallery2.jpeg">
+        <img src="assets/images/gallery3.jpeg">
+        <img src="assets/images/gallery4.jpeg">
+        <img src="assets/images/gallery5.jpeg">
+      </div>
+    </section>
+    <!-- GRID FOTOGRÁFICA -->
+
+    <section class="photo-grid">
+      <div class="photo-card">
+        <img src="assets/images/gallery1.jpeg">
+      </div>
+
+      <div class="photo-card">
+        <img src="assets/images/gallery2.jpeg">
+      </div>
+
+      <div class="photo-card">
+        <img src="assets/images/gallery3.jpeg">
+      </div>
+
+      <div class="photo-card">
+        <img src="assets/images/gallery4.jpeg">
+      </div>
+
+      <div class="photo-card">
+        <img src="assets/images/gallery5.jpeg">
+      </div>
+
+      <div class="photo-card">
+        <img src="assets/images/gallery6.jpeg">
+      </div>
+    </section>
+  </main>
+  <!-- BANDA DE TEXTO -->
+
+  <div class="track">
+    <div class="group">
+      <span>THE ESSENCE • MUSIC • MERCH • LIVE EXPERIENCE • COMMUNITY •</span>
+      <span>THE ESSENCE • MUSIC • MERCH • LIVE EXPERIENCE • COMMUNITY •</span>
+      <span>THE ESSENCE • MUSIC • MERCH • LIVE EXPERIENCE • COMMUNITY •</span>
+    </div>
+
+    <div class="group">
+      <span>THE ESSENCE • MUSIC • MERCH • LIVE EXPERIENCE • COMMUNITY •</span>
+      <span>THE ESSENCE • MUSIC • MERCH • LIVE EXPERIENCE • COMMUNITY •</span>
+      <span>THE ESSENCE • MUSIC • MERCH • LIVE EXPERIENCE • COMMUNITY •</span>
+    </div>
+  </div>
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="copyright">
+      <p>© 2026 THE ESSENCE</p>
+    </div>
+
+    <h2>THE ESSENCE</h2>
+    <p>Where distortion, emotion and atmosphere collide.</p>
+
+    <div class="footer-links">
+      <a href="help.html">Help</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.instagram.com/theessence__of/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/channel/UCjjIb5W5-OcR4VmXhDeepxA" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61589623434500" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.tiktok.com/@the_essence_of" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+      <a href="https://music.apple.com" target="_blank"><i class="fab fa-apple"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
