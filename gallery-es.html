@@ -453,6 +453,42 @@
         transform:translateX(-50%);
       }
     }
+
+    /* PAUSAR CARRUSEL */
+    .carousel-track:hover{
+      animation-play-state: paused;
+    }
+    
+    /* CURSOR DE MANITA EN LAS IMÁGENES */
+    .carousel-track img,
+    .photo-card img{
+      cursor: zoom-in;
+    }
+    
+    /* LIGHTBOX (imagen grande) */
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      cursor: zoom-out;
+    }
+    
+    .lightbox.active{
+      display: flex;
+    }
+    
+    .lightbox img{
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border: 1px solid red;
+      box-shadow: 0 0 40px rgba(255,0,0,0.3);
+    }
+    
     /* PHOTO GRID */
 
     .photo-grid{
@@ -504,6 +540,34 @@
   </style>
 </head>
 
+  <!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Imagen ampliada">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  // Al hacer clic en cualquier imagen del carrusel o del grid
+  document.querySelectorAll('.carousel-track img, .photo-card img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('active');
+    });
+  });
+
+  // Cerrar al hacer clic en el fondo
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  // Cerrar con la tecla ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') lightbox.classList.remove('active');
+  });
+</script>
+  
 <body>
   <!-- WHATSAPP FLOAT BUTTON -->
   <a href="https://www.whatsapp.com" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
